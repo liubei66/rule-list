@@ -9,7 +9,7 @@ DOMAIN,greasyfork.org
 DOMAIN,www.mb3admin.com
 DOMAIN,repo.kodinerds.net
 #jav
-DOMAIN,javdb.com
+DOMAIN-KEYWORD,javdb
 DOMAIN-SUFFIX,dmm.co.jp
 DOMAIN-SUFFIX,duga.jp
 DOMAIN-SUFFIX,10musume.com
