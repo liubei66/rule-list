@@ -5,6 +5,7 @@
 #DOMAIN-SUFFIX
 #IP-CIDR
 #################
+DOMAIN,har01d.org
 DOMAIN,greasyfork.org
 DOMAIN,www.mb3admin.com
 DOMAIN,repo.kodinerds.net
