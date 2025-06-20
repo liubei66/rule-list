@@ -5,6 +5,7 @@
 #IP-CIDR
 #################
 DOMAIN,registry.linkease.net
+DOMAIN,xiaoya.host
 DOMAIN,api.nn.ci
 DOMAIN,mb3admin.com
 DOMAIN-SUFFIX,pengjikong.top
