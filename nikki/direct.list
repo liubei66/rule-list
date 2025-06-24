@@ -4,6 +4,7 @@
 #DOMAIN-SUFFIX
 #IP-CIDR
 #################
+DOMAIN-SUFFIX,apple.com
 DOMAIN,registry.linkease.net
 DOMAIN,xiaoya.host
 DOMAIN,api.nn.ci
