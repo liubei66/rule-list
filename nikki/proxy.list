@@ -6,6 +6,7 @@
 #IP-CIDR
 #################
 DOMAIN,llg01.com
+DOMAIN-SUFFIX,llgjc.xyz
 DOMAIN,har01d.org
 DOMAIN,greasyfork.org
 DOMAIN,www.mb3admin.com
