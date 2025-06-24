@@ -4,6 +4,8 @@
 #DOMAIN-SUFFIX
 #IP-CIDR
 #################
+DOMAIN-KEYWORD,zhongan
+DOMAIN-KEYWORD,zaonline
 DOMAIN,registry.linkease.net
 DOMAIN,xiaoya.host
 DOMAIN,api.nn.ci
