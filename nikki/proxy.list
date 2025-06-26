@@ -5,9 +5,11 @@
 #DOMAIN-SUFFIX
 #IP-CIDR
 #################
+##机场##
 DOMAIN,xn--4gq62f52gdss.ink
 DOMAIN,llg01.com
 DOMAIN-SUFFIX,llgjc.xyz
+####diy####
 DOMAIN,har01d.org
 DOMAIN,greasyfork.org
 DOMAIN,www.mb3admin.com
