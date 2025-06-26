@@ -4,6 +4,8 @@
 #DOMAIN-SUFFIX
 #IP-CIDR
 #################
+DOMAIN,unpkg.com
+DOMAIN-SUFFIX,firefox.com
 DOMAIN-SUFFIX,apple.com
 DOMAIN,registry.linkease.net
 DOMAIN,xiaoya.host
