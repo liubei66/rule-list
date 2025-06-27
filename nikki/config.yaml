@@ -14,6 +14,7 @@ proxy-providers:
 # 节点信息
 proxies:
   - {name: 直连, type: direct}
+  - {name: 拒绝访问, type: reject}
 
 # 全局配置 
 port: 7890
@@ -82,17 +83,20 @@ dns:
   fake-ip-filter:
     - "rule-set:diy_domain_direct,private_domain,cn_domain,tmdb_domain,apple_domain"
 
-  default-nameserver:
-    - 127.0.0.1
-  proxy-server-nameserver:
-    - 127.0.0.1
-  direct-nameserver: 
-    - 127.0.0.1
-  # namesever尽量用运营商提供的DNS
-  nameserver:
-    - 127.0.0.1
+  nameserver-policy:
+    "rule-set:diy_domain_direct,private_domain,cn_domain,tmdb_domain,apple_domain":
+       - system
 
- 
+  nameserver:
+    - system
+    
+  proxy-server-nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+
+  direct-nameserver: 
+    - system
+
 # 出站策略
 # 注意锚点必须放在引用的上方，可以集中把锚点全部放yaml的顶部。
 pr: &pr {type: select, proxies: [🚀 默认代理, 🔯 香港故转, 🔯 日本故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
@@ -109,8 +113,10 @@ proxy-groups:
   - {name: 🎥 NETFLIX, <<: *pr}
   - {name: ✈️ Speedtest, <<: *pr}
   - {name: 💶 PayPal, <<: *pr}
-  - {name: 🍎 Apple, type: select, proxies: [直连, 🚀 默认代理]}
-  - {name: 🎯 直连, type: select, proxies: [直连, 🚀 默认代理]}
+  - {name: 🍎 Apple, type: select, proxies: [直连,拒绝访问, 🚀 默认代理]}
+  - {name: 🎯 直连, type: select, proxies: [直连,拒绝访问, 🚀 默认代理]}
+  - {name: 🚫 拒绝访问, type: select, proxies: [直连,拒绝访问, 🚀 默认代理]}
+  - {name: ⚡ CDN, type: select, proxies: [直连,拒绝访问, 🚀 默认代理]}
   - {name: 🐟 漏网之鱼, <<: *pr}
   - {name: 🇭🇰 香港节点, type: select, include-all: true, filter: "(?i)港|hk|hongkong|hong kong"}
   - {name: 🇯🇵 日本节点, type: select, include-all: true, filter: "(?i)日|jp|japan"}
@@ -126,12 +132,15 @@ proxy-groups:
 # 规则匹配
 # 此规则部分没有做防泄露处理，因为弊严重大于利！
 rules:
-  - RULE-SET,private_ip,🎯 直连
+  - RULE-SET,private_ip,🎯 直连,no-resolve
   - RULE-SET,diy_domain_direct,🎯 直连
   - RULE-SET,diy_domain_proxy,🚀 默认代理
+  - RULE-SET,ad_block,🚫 拒绝访问
   - RULE-SET,cn_domain,🎯 直连
   - RULE-SET,tmdb_domain,🎯 直连
-  - RULE-SET,private_domain,直连
+  - RULE-SET,private_domain,🎯 直连
+  - RULE-SET,cloudflare_ip,⚡ CDN
+  - RULE-SET,cloudflare_ip,⚡ CDN
   - RULE-SET,apple_domain,🍎 Apple
   - RULE-SET,ai,🤖 ChatGPT
   - RULE-SET,github_domain,👨🏿‍💻 GitHub
@@ -155,7 +164,7 @@ rules:
 rule-anchor:
   ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
   domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
-  diy: &diy {type: http, interval: 86400, behavior: classical, format: text}
+  diy: &diy {type: http, interval: 3600, behavior: classical, format: text}
 
 rule-providers: 
   private_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs"}
@@ -175,8 +184,11 @@ rule-providers:
   geolocation-!cn: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"}
   cn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"} 
   cn_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"}
+  cloudfront_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cloudfront.mrs"}
+  cloudflare_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cloudflare.mrs"}
   google_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs"}
   telegram_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
   netflix_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs"}
   diy_domain_proxy: { <<: *diy, url: "https://raw.githubusercontent.com/liubei66/rule-list/master/nikki/proxy.list"}
   diy_domain_direct: { <<: *diy, url: "https://raw.githubusercontent.com/liubei66/rule-list/master/nikki/direct.list"}
+  ad_block: { <<: *domain, url: "https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockmihomo.mrs"}
