@@ -4,6 +4,10 @@
 #DOMAIN-SUFFIX
 #IP-CIDR
 #################
+DOMAIN-SUFFIX,msftauth.net
+DOMAIN-SUFFIX,entrust.net
+DOMAIN-SUFFIX,office.com
+DOMAIN-SUFFIX,windowsupdate.com
 DOMAIN-SUFFIX,live.com
 DOMAIN-SUFFIX,digicert.com
 DOMAIN-SUFFIX,cloudflare-dns.com
