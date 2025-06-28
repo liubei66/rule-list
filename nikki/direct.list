@@ -5,6 +5,7 @@
 #IP-CIDR
 #################
 DOMAIN-SUFFIX,bing.com
+DOMAIN-SUFFIX,windows.com
 DOMAIN-SUFFIX,icloud.com
 DOMAIN-SUFFIX,jetbrains.com
 DOMAIN-SUFFIX,microsoft.com
