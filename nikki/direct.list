@@ -4,6 +4,7 @@
 #DOMAIN-SUFFIX
 #IP-CIDR
 #################
+DOMAIN-SUFFIX,live.com
 DOMAIN-SUFFIX,digicert.com
 DOMAIN-SUFFIX,cloudflare-dns.com
 DOMAIN-SUFFIX,bing.com
