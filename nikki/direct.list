@@ -4,6 +4,16 @@
 #DOMAIN-SUFFIX
 #IP-CIDR
 #################
+##my diy
+
+DOMAIN-SUFFIX,pengjikong.top
+DOMAIN,xiaoya.host
+DOMAIN,api.nn.ci
+DOMAIN,mb3admin.com
+DOMAIN,registry.linkease.net
+
+##service in china
+DOMAIN-SUFFIX,pureapk.com
 DOMAIN-SUFFIX,msftauth.net
 DOMAIN-SUFFIX,entrust.net
 DOMAIN-SUFFIX,office.com
@@ -16,15 +26,9 @@ DOMAIN-SUFFIX,windows.com
 DOMAIN-SUFFIX,icloud.com
 DOMAIN-SUFFIX,jetbrains.com
 DOMAIN-SUFFIX,microsoft.com
-DOMAIN-SUFFIX,pengjikong.top
-DOMAIN,xiaoya.host
-DOMAIN-SUFFIX,pureapk.com
 DOMAIN,unpkg.com
-DOMAIN,api.nn.ci
-DOMAIN,mb3admin.com
 DOMAIN-SUFFIX,firefox.com
 DOMAIN-SUFFIX,apple.com
-DOMAIN,registry.linkease.net
 DOMAIN-SUFFIX,ntp.org
 #jav
 DOMAIN-SUFFIX,dmm.co.jp
