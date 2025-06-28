@@ -4,6 +4,10 @@
 #DOMAIN-SUFFIX
 #IP-CIDR
 #################
+DOMAIN-SUFFIX,bing.com
+DOMAIN-SUFFIX,icloud.com
+DOMAIN-SUFFIX,jetbrains.com
+DOMAIN-SUFFIX,microsoft.com
 DOMAIN-SUFFIX,pengjikong.top
 DOMAIN,xiaoya.host
 DOMAIN-SUFFIX,pureapk.com
