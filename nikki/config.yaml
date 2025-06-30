@@ -81,10 +81,10 @@ dns:
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
-    - "rule-set:diy_domain_direct,private_domain,cn_domain,tmdb_domain,apple_domain"
+    - "rule-set:ad_block,diy_domain_direct,private_domain,cn_domain,tmdb_domain,apple_domain"
 
   nameserver-policy:
-    "rule-set:diy_domain_direct,private_domain,cn_domain,tmdb_domain,apple_domain":
+    "rule-set:ad_block,diy_domain_direct,private_domain,cn_domain,tmdb_domain,apple_domain":
        - system
 
   nameserver:
