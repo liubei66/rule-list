@@ -5,6 +5,7 @@
 #DOMAIN-SUFFIX
 #IP-CIDR
 #################
+DOMAIN,licensing.mp.microsoft.com
 ##机场##
 DOMAIN,xn--4gq62f52gdss.ink
 DOMAIN,llg01.com
