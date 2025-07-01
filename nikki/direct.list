@@ -23,7 +23,7 @@ DOMAIN-SUFFIX,bing.com
 DOMAIN-SUFFIX,windows.com
 DOMAIN-SUFFIX,icloud.com
 DOMAIN-SUFFIX,jetbrains.com
-#DOMAIN-SUFFIX,microsoft.com
+DOMAIN-SUFFIX,microsoft.com
 DOMAIN,unpkg.com
 DOMAIN-SUFFIX,firefox.com
 DOMAIN-SUFFIX,apple.com
