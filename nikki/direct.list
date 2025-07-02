@@ -12,6 +12,7 @@ DOMAIN,mb3admin.com
 DOMAIN,registry.linkease.net
 
 ##service in china
+DOMAIN-SUFFIX,microsoft.com
 DOMAIN-SUFFIX,msftauth.net
 DOMAIN-SUFFIX,entrust.net
 DOMAIN-SUFFIX,office.com
