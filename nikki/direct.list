@@ -12,7 +12,7 @@ DOMAIN,mb3admin.com
 DOMAIN,registry.linkease.net
 
 ##service in china
-#DOMAIN-SUFFIX,thetvdb.com
+DOMAIN-SUFFIX,thetvdb.com
 DOMAIN-SUFFIX,microsoft.com
 DOMAIN-SUFFIX,msftauth.net
 DOMAIN-SUFFIX,entrust.net
