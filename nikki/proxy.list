@@ -12,6 +12,7 @@ DOMAIN-SUFFIX,llgjc.xyz
 ##dns##
 #DOMAIN,cloudflare-dns.com
 ####diy####
+DOMAIN-SUFFIX,pinterest.com
 DOMAIN,har01d.org
 DOMAIN,greasyfork.org
 DOMAIN,www.mb3admin.com
