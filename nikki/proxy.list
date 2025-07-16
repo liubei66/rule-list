@@ -22,6 +22,7 @@ DOMAIN,api.ip.sb
 DOMAIN,artworks.thetvdb.com
 #jav
 DOMAIN-KEYWORD,javdb
+DOMAIN-SUFFIX,mgstage.com
 DOMAIN-SUFFIX,dmm.co.jp
 DOMAIN-SUFFIX,duga.jp
 DOMAIN-SUFFIX,10musume.com
@@ -40,7 +41,6 @@ DOMAIN,www.prestige-av.com
 DOMAIN,javten.com
 DOMAIN,www.heyzo.com
 DOMAIN,www.aventertainments.com
-DOMAIN,www.mgstage.com
 DOMAIN,www.jav321.com
 DOMAIN,www.airav.wiki
 DOMAIN,javfree.me
