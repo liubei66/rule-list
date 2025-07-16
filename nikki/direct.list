@@ -33,5 +33,6 @@ DOMAIN-SUFFIX,firefox.com
 DOMAIN-SUFFIX,apple.com
 DOMAIN-SUFFIX,ntp.org
 #jav
+DOMAIN,pics.dmm.co.jp
 DOMAIN-SUFFIX,jdbstatic.com
 DOMAIN-SUFFIX,services.googleapis.cn
