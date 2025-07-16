@@ -34,6 +34,6 @@ DOMAIN-SUFFIX,apple.com
 DOMAIN-SUFFIX,ntp.org
 #jav
 DOMAIN-SUFFIX,dmm.co.jp
-DOMAIN,pic.duga.jp
+#DOMAIN,pic.duga.jp
 DOMAIN-SUFFIX,jdbstatic.com
 DOMAIN-SUFFIX,services.googleapis.cn
