@@ -14,7 +14,7 @@ DOMAIN-SUFFIX,llgjc.xyz
 ####diy####
 DOMAIN-SUFFIX,pinterest.com
 DOMAIN,har01d.org
-#DOMAIN,cdn.oaistatic.com
+DOMAIN,cdn.oaistatic.com
 DOMAIN-SUFFIX,midjourney.com
 DOMAIN-SUFFIX,vimeocdn.com
 DOMAIN-SUFFIX,stripe.com
