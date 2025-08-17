@@ -24,46 +24,47 @@ DOMAIN,repo.kodinerds.net
 DOMAIN,api.ipify.org
 DOMAIN,api.ip.sb
 DOMAIN,artworks.thetvdb.com
+
 #jav
 DOMAIN-KEYWORD,javdb
-# DOMAIN-SUFFIX,mgstage.com
+DOMAIN-SUFFIX,mgstage.com
 DOMAIN-SUFFIX,dmm.co.jp
-# DOMAIN-SUFFIX,duga.jp
-# DOMAIN-SUFFIX,10musume.com
-# DOMAIN-SUFFIX,1pondo.tv
-# DOMAIN,www.airav.wiki
-# DOMAIN,www.arzon.jp
-# DOMAIN,ec.sod.co.jp
-# DOMAIN,adult.contents.fc2.com
-# DOMAIN,www.c0930.com
-# DOMAIN,www.h4610.com
-# DOMAIN,mywife.cc
-# DOMAIN,www.pcolle.com
-# DOMAIN,www.xxx-av.com
-# DOMAIN,dahlia-av.jp
-# DOMAIN,www.prestige-av.com
-# DOMAIN,javten.com
-# DOMAIN,www.heyzo.com
-# DOMAIN,www.aventertainments.com
-# DOMAIN,www.jav321.com
-# DOMAIN,www.airav.wiki
-# DOMAIN,javfree.me
-# DOMAIN,modelmediaasia.com
-# DOMAIN,www.avbase.net
-# DOMAIN,gcolle.net
-# DOMAIN,www.av-league.com
-# DOMAIN,my.tokyo-hot.com
-# DOMAIN,www.caribbeancom.com
-# DOMAIN,www.pacopacomama.com
-# DOMAIN,faleno.jp
-# DOMAIN,www.heydouga.com
-# DOMAIN,dl.getchu.com
-# DOMAIN,www.kin8tengoku.com
-# DOMAIN,www.caribbeancompr.com
-# DOMAIN,xslist.org
-# DOMAIN,www.10musume.com
-# DOMAIN,theporndb.net
-# DOMAIN,api.theporndb.net
-# DOMAIN,www.muramura.tv
-# DOMAIN,www.javbus.com
-# DOMAIN,madouqu.com
+DOMAIN-SUFFIX,duga.jp
+DOMAIN-SUFFIX,10musume.com
+DOMAIN-SUFFIX,1pondo.tv
+DOMAIN,www.airav.wiki
+DOMAIN,www.arzon.jp
+DOMAIN,ec.sod.co.jp
+DOMAIN,adult.contents.fc2.com
+DOMAIN,www.c0930.com
+DOMAIN,www.h4610.com
+DOMAIN,mywife.cc
+DOMAIN,www.pcolle.com
+DOMAIN,www.xxx-av.com
+DOMAIN,dahlia-av.jp
+DOMAIN,www.prestige-av.com
+DOMAIN,javten.com
+DOMAIN,www.heyzo.com
+DOMAIN,www.aventertainments.com
+DOMAIN,www.jav321.com
+DOMAIN,www.airav.wiki
+DOMAIN,javfree.me
+DOMAIN,modelmediaasia.com
+DOMAIN,www.avbase.net
+DOMAIN,gcolle.net
+DOMAIN,www.av-league.com
+DOMAIN,my.tokyo-hot.com
+DOMAIN,www.caribbeancom.com
+DOMAIN,www.pacopacomama.com
+DOMAIN,faleno.jp
+DOMAIN,www.heydouga.com
+DOMAIN,dl.getchu.com
+DOMAIN,www.kin8tengoku.com
+DOMAIN,www.caribbeancompr.com
+DOMAIN,xslist.org
+DOMAIN,www.10musume.com
+DOMAIN,theporndb.net
+DOMAIN,api.theporndb.net
+DOMAIN,www.muramura.tv
+DOMAIN,www.javbus.com
+DOMAIN,madouqu.com
