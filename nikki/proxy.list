@@ -13,7 +13,7 @@ DOMAIN-SUFFIX,llgjc.xyz
 #DOMAIN,cloudflare-dns.com
 ####diy####
 DOMAIN,cf.mb6.top
-DOMAIN,alist.homelabproject.cc
+#DOMAIN,alist.homelabproject.cc
 DOMAIN-SUFFIX,pinterest.com
 DOMAIN,har01d.org
 DOMAIN-SUFFIX,midjourney.com
