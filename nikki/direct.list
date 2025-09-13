@@ -10,8 +10,9 @@ DOMAIN,xiaoya.host
 DOMAIN,api.nn.ci
 DOMAIN,mb3admin.com
 DOMAIN,registry.linkease.net
-
+DOMAIN-
 ##service in china
+DOMAIN-SUFFIX,xn--ngstr-lra8j.com
 DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,gstatic.com
 DOMAIN-SUFFIX,cdn-telegram.org
