@@ -1,0 +1,35 @@
+  # DOMAIN-KEYWORD
+  # DOMAIN
+  # DOMAIN-SUFFIX
+  # IP-CIDR
+  DOMAIN:
+    - xiaoya.host
+    - api.nn.ci
+    - mb3admin.com
+    - registry.linkease.net
+    - cdn.jsdelivr.net
+    - unpkg.com
+    - pics.dmm.co.jp   
+  DOMAIN-SUFFIX:
+    - pengjikong.top
+    - xn--ngstr-lra8j.com
+    - oaistatic.com
+    - gstatic.com
+    - cdn-telegram.org
+    - microsoft.com
+    - msftauth.net
+    - entrust.net
+    - office.com
+    - windowsupdate.com
+    - live.com
+    - digicert.com
+    - bing.com
+    - windows.com
+    - icloud.com
+    - jetbrains.com
+    - cantons.net
+    - firefox.com
+    - apple.com
+    - ntp.org
+    - jdbstatic.com
+    - services.googleapis.cn
