@@ -13,7 +13,6 @@ DOMAIN,api.nn.ci
 DOMAIN,mb3admin.com
 DOMAIN,registry.linkease.net
 ##service in china
-DOMAIN,thetvdb.com
 #DOMAIN-SUFFIX,googlevideo.com
 DOMAIN-SUFFIX,xn--ngstr-lra8j.com
 DOMAIN-SUFFIX,oaistatic.com
