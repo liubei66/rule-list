@@ -16,7 +16,6 @@ DOMAIN,registry.linkease.net
 ##service in china
 DOMAIN-SUFFIX,xn--ngstr-lra8j.com
 DOMAIN-SUFFIX,oaistatic.com
-DOMAIN-SUFFIX,gstatic.com
 DOMAIN-SUFFIX,cdn-telegram.org
 DOMAIN,cdn.jsdelivr.net
 DOMAIN-SUFFIX,microsoft.com
