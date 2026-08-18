@@ -37,7 +37,7 @@ DOMAIN-SUFFIX,apple.com
 DOMAIN-SUFFIX,ntp.org
 #jav
 DOMAIN,pics.dmm.co.jp
-DOMAIN-SUFFIX,jdbstatic.com
+#DOMAIN-SUFFIX,jdbstatic.com
 
 ######stun
 DOMAIN,stun.genymotion.com
