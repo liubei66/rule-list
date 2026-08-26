@@ -15,15 +15,6 @@ pname(
 ) -> must_direct
 
 
-# --- 协议安全策略 ---
-
-l4proto(udp) && dport(443) -> block
-
-dip(224.0.0.0/4, 'ff00::/8') -> direct
-
-dport(7680) -> direct
-
-
 # --- 广告高优拦截 ---
 
 domain(geosite:category-ads) -> block
@@ -39,6 +30,13 @@ domain(
 
 dip(geoip:cn) -> direct
 
+# --- 协议安全策略 ---
+
+l4proto(udp) && dport(443) -> block
+
+dip(224.0.0.0/4, 'ff00::/8') -> direct
+
+dport(7680) -> direct
 
 # --- DIY Direct ---
 
