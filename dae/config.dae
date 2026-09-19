@@ -1,0 +1,331 @@
+global {
+tproxy_port: 12345
+tproxy_port_protect: true
+so_mark_from_dae: 0
+
+log_level: error
+lan_interface: br-lan,cni0,bond
+wan_interface: auto
+
+auto_config_kernel_parameter: true
+dial_mode: domain
+
+tcp_check_url: 'http://127.0.0.1/'
+udp_check_dns: '127.0.0.1:53'
+bootstrap_resolver: '223.5.5.5:53'
+
+check_interval: 3600s
+check_tolerance: 50ms
+
+}
+
+node {
+nikki: 'socks5://127.0.0.1:1080'
+}
+
+dns {
+
+upstream {
+    alidns: 'tls://dns.alidns.com'
+    k8s: 'tcp+udp://192.168.120.10:53'
+    localdns: 'tcp+udp://127.0.0.1:53'
+}
+
+routing {
+    request {
+        qname(geosite:category-ads-all) -> reject
+        qname(
+            suffix:lan,
+            suffix:pengjikong.top,
+            full:mb3admin.com,
+            full:registry.linkease.net
+            ) -> localdns
+        qname(suffix:cluster.local) -> k8s
+        fallback: alidns
+    }
+    response {
+        fallback: accept
+    }
+}
+
+}
+
+group {
+proxy {
+policy: min_moving_avg
+}
+}
+
+routing {
+
+# ============================================================
+# 本地与系统流量
+# ============================================================
+dip(geoip:private) -> direct
+pname(
+    NetworkManager,
+    systemd-resolved,
+    dnsmasq,
+    lucky,
+    adguardhome,
+    mihomo
+) -> must_direct
+
+
+
+# ============================================================
+# 大陆白名单与本地地理分流
+# ============================================================
+
+dip(geoip:cn) -> direct
+
+domain(
+    geosite:cn,
+    geosite:china-list,
+    geosite:apple@cn,
+    geosite:microsoft@cn
+) -> direct
+
+
+# ============================================================
+# 协议安全策略
+# ============================================================
+
+l4proto(udp) && dport(443) -> block
+
+dip(
+    224.0.0.0/4,
+    'ff00::/8'
+) -> direct
+
+dport(7680) -> direct
+
+
+# ============================================================
+# DIY Direct
+# ============================================================
+
+domain(
+    lanjmp.com,
+    xiaoya.host,
+    api.nn.ci,
+    mb3admin.com,
+    registry.linkease.net,
+    cdn.jsdelivr.net,
+    unpkg.com,
+    pics.dmm.co.jp
+) -> direct
+
+domain(
+    suffix:pengjikong.top,
+    suffix:pengjikong.xyz,
+    suffix:xn--ngstr-lra8j.com,
+    suffix:oaistatic.com,
+    suffix:cdn-telegram.org,
+    suffix:microsoft.com,
+    suffix:msftauth.net,
+    suffix:entrust.net,
+    suffix:office.com,
+    suffix:windowsupdate.com,
+    suffix:live.com,
+    suffix:digicert.com,
+    suffix:bing.com,
+    suffix:windows.com,
+    suffix:icloud.com,
+    suffix:jetbrains.com,
+    suffix:cantons.net,
+    suffix:firefox.com,
+    suffix:apple.com,
+    suffix:ntp.org
+) -> direct
+
+
+# ============================================================
+# STUN Direct
+# ============================================================
+
+domain(
+    stun.genymotion.com,
+    stun.lovense.com,
+    stun.diallog.com,
+    stun.threema.ch,
+    stun.fmo.de,
+    stun.bcs2005.net,
+    stun.baltmannsweiler.de,
+    stun.godatenow.com,
+    stun.siptrunk.com,
+    stun.oncloud7.ch,
+    stun.poetamatusel.org,
+    stun.business-isp.nl,
+    stun.pure-ip.com,
+    stun.nextcloud.com,
+    stun.ttmath.org,
+    stun.thinkrosystem.com,
+    stun.healthtap.com,
+    stun.galeriemagnet.at,
+    stun.schulinformatik.at,
+    stun.zentauron.de,
+    stun.linuxtrent.it,
+    stun.technosens.fr,
+    stun.tula.nu,
+    stun.mixvoip.com,
+    stun.alpirsbacher.de,
+    stun.stochastix.de,
+    stun.sonetel.net,
+    stun.axialys.net,
+    stun.verbo.be,
+    stun.bridesbay.com,
+    stun.kanojo.de,
+    stun.chatous.com,
+    stun.meetwife.com,
+    stun.eol.co.nz,
+    stun.bethesda.net,
+    stun.siplogin.de,
+    stun.cellmail.com,
+    stun.m-online.net,
+    stun.tel2.co.uk,
+    stun.vomessen.net,
+    stun.ru-brides.com,
+    stun.frozenmountain.com,
+    stun.ncic.com,
+    stun.flashdance.cx,
+    stun.f.haeder.net,
+    stun.sonetel.com,
+    stun.moonlight-stream.org,
+    stun.files.fm,
+    stun.skydrone.aero,
+    stun.vavadating.com,
+    stun.ipfire.org,
+    stun.engineeredarts.co.uk,
+    stun.annatel.net,
+    stun.sip.us,
+    stun.framasoft.org,
+    stun.cope.es,
+    stun.lebendigefluesse.at,
+    stun.uabrides.com,
+    stun.romaaeterna.nl,
+    stun.fitauto.ru,
+    stun.atagverwarming.nl,
+    stun.dcalling.de,
+    stun.telnyx.com,
+    stun.antisip.com,
+    stun.telviva.com,
+    stun.signalwire.com,
+    stun.voipia.net,
+    stun.sipthor.net,
+    stun.finsterwalder.com,
+    stun.kaseya.com,
+    stun.geesthacht.de,
+    stun.grazertrinkwasseringefahr.at,
+    stun.hot-chilli.net,
+    stun.bitburger.com,
+    stun.ringostat.com,
+    stun.voipgate.com,
+    stun.graftlab.com,
+    stun.nanocosmos.de,
+    stun.peethultra.be,
+    stun.voip.blackberry.com,
+    stun.acronis.com,
+    stun.radiojar.com,
+    stun.yesdates.com,
+    stun.ukh.de
+) -> direct
+
+
+# ============================================================
+# DIY Proxy
+# ============================================================
+
+domain(
+    xn--4gq62f52gdss.ink,
+    llg01.com,
+    cf.mb6.top,
+    har01d.org,
+    repo.jellyfin.org,
+    greasyfork.org,
+    www.mb3admin.com,
+    repo.kodinerds.net,
+    api.ipify.org,
+    api.ip.sb,
+    artworks.thetvdb.com,
+    c0.jdbstatic.com,
+    www.airav.wiki,
+    www.arzon.jp,
+    ec.sod.co.jp,
+    adult.contents.fc2.com,
+    www.c0930.com,
+    www.h4610.com,
+    mywife.cc,
+    www.pcolle.com,
+    www.xxx-av.com,
+    dahlia-av.jp,
+    www.prestige-av.com,
+    javten.com,
+    www.heyzo.com,
+    www.aventertainments.com,
+    www.jav321.com,
+    javfree.me,
+    modelmediaasia.com,
+    www.avbase.net,
+    gcolle.net,
+    www.av-league.com,
+    my.tokyo-hot.com,
+    www.caribbeancom.com,
+    www.pacopacomama.com,
+    faleno.jp,
+    www.heydouga.com,
+    dl.getchu.com,
+    www.kin8tengoku.com,
+    www.caribbeancompr.com,
+    xslist.org,
+    www.10musume.com,
+    theporndb.net,
+    api.theporndb.net,
+    www.muramura.tv,
+    www.javbus.com,
+    madouqu.com
+) -> proxy
+
+domain(
+    suffix:llgjc.org,
+    suffix:llgjc.xyz,
+    suffix:pinterest.com,
+    suffix:midjourney.com,
+    suffix:vimeocdn.com,
+    suffix:stripe.com,
+    suffix:mgstage.com,
+    suffix:dmm.co.jp,
+    suffix:duga.jp,
+    suffix:10musume.com,
+    suffix:1pondo.tv
+) -> proxy
+
+
+# ============================================================
+# 核心海外大厂高优分流
+# ============================================================
+
+dip(geoip:telegram) -> proxy
+
+domain(
+    geosite:youtube,
+    geosite:google,
+    geosite:telegram,
+    geosite:openai,
+    geosite:anthropic,
+    geosite:github,
+    geosite:twitter,
+    geosite:netflix
+) -> proxy
+
+domain(geosite:gfw) -> proxy
+
+
+# ============================================================
+# 终极兜底
+# ============================================================
+
+fallback: direct
+
+
+}
